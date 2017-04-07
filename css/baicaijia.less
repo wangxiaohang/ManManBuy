@@ -11,15 +11,15 @@ header {
   width:100%;
   height:37px;
   overflow:hidden;
+  padding:0;
+  position:relative;
   > ul {
+    position:absolute;
     > li {
       float:left;
       height:35px;
-      > a {
-        display:block;
-        font:normal 14px/36px "microsoft yahei";
-        padding:0 10px;
-      }
+      font:normal 14px/36px "microsoft yahei";
+      padding:0 10px;
       // 选中状态
       &.active {
         > a{
@@ -29,4 +29,131 @@ header {
       }
     }
   }
+}
+// 商品列表
+.main {
+  > ul {
+    > li {
+      background:#fff;
+      margin-top:5px;
+      padding:10px 5px;
+      position:relative;
+      .left {
+        position:absolute;
+        left:5px;
+        // 图片
+        > img {
+          width:130px;
+        }
+      }
+      .right {
+        margin-left:135px;
+        // 标题
+        > p:nth-of-type(1) {
+          font:normal 16px/30px "microsoft yahei";
+          color:#000;
+          > span.b {
+            font-weight:bold;
+          }
+        }
+        // 价格
+        > p:nth-of-type(2) {
+          font:normal 22px/40px "microsoft yahei";
+          color:#FC353A;
+          > em,del,i {
+            font-size:12px;
+            font-style:normal;
+          }
+          > i {
+            font-size:16px;
+          }
+          > del {
+            color:#A8B0C5;
+            margin-left:10px;
+          }
+        }
+        // 已领 优惠券
+        > .bar {
+          // 链接
+          > a {
+            position:absolute;
+            display:block;
+            width:300px;
+            height:60px;
+          }
+          // 盒子
+          > i {
+            display:block;
+            float:left;
+            width:80px;
+            height:12px;
+            border-radius:6px;
+            background:#FFB7B7;
+            border:1px solid #FC353A;
+            color:white;
+            line-height:12px;
+            font-weight:bold;
+            font-style:normal;
+            text-align:center;
+            font-family:"aria";
+            overflow:hidden;
+            > em {
+              display:block;
+              float:left;
+              height:100%;
+              background:#FC353A;
+            }
+          }
+          // 文字
+          > b {
+            font-size:12px;
+            font-weight:normal;
+            color:#FC353A;
+            float:left;
+            margin-left:10px;
+          }
+        }
+        // 领优惠券 下单
+        > .as {
+          width:100%;
+          margin-top:10px;
+          > a:first-child {
+            display:block;
+            width:110px;
+            font:normal 12px/30px "microsoft yahei";
+            text-align:center;
+            border:1px dotted #FC353A;
+            color:#E4393C;
+            float:left;
+          }
+          > a:last-child {
+            display:block;
+            width:60px;
+            font:normal 12px/30px "microsoft yahei";
+            color:white;
+            background:#FF5E5D;
+            border-radius:5px;
+            float:right;
+            text-align:center;
+          }
+        }
+      }
+    }
+  }
+}
+// 回到顶部
+#totop {
+  display:block;
+  width: 50px;
+  height: 50px;
+  background:rgb(0,0,0);
+  border-radius:50%;
+  color:#fff;
+  font:bold 28px/56px "microsoft yahei";
+  text-align:center;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  display:none;
+  opacity:0;
 }

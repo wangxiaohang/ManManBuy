@@ -1,4 +1,2 @@
-1.移动端页面
-2.使用第三方框架：
-    a zepto.js，js框架
-    b artTemplate，腾讯模版
+# ManManBuy
+A web app using zepto.js and arTemplate,involving a lot of ajax request.

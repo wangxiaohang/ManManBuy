@@ -27,7 +27,9 @@
       </div>
       <!--nav end-->
       <!--main start-->
-
+      <div class="main">
+            <ul></ul>
+      </div>
       <!--main end-->
       <!--footer start-->
       <div class="footer">
@@ -48,6 +50,8 @@
             </div>
       </div>
       <!--footer end-->
+      <!--回到顶部-->
+      <a id="totop" href="#top">^</a>
 </div>
 <!--引入js页面-->
 <script src="lib/js/zepto.js"></script>
@@ -61,7 +65,25 @@
 <!--模版-->
 <script type="text/html" id="navs">
       {{each result as value index}}
-      <li class="{{if index==0}}active{{/if}}"><a href="#">{{value.title}}</a></li>
+      <li data-titleid="{{value.titleId}}" class="{{if index==0}}active{{/if}}">{{value.title}}</li>
+      {{/each}}
+</script>
+<script type="text/html" id="main">
+      {{each result as value index}}
+      <li>
+            <div class="left">
+                  {{#value.productImg}}
+            </div>
+            <div class="right">
+                  <p>{{#value.productName}}</p>
+                  <p>{{#value.productPrice}}</p>
+                  {{#value.productCouponRemain}}
+                  <div class="as clearfix">
+                        {{#value.productCoupon}}
+                        {{#value.productHref}}
+                  </div>
+            </div>
+      </li>
       {{/each}}
 </script>
 </body>

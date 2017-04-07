@@ -138,9 +138,77 @@ function goTop(){
         $totop.trigger("click");
 }
 // 封装 划动事件
-function tap( obj ){
-        var o = obj[ "o" ];
+function tapX( obj ){
+        var o = obj[ "o" ], so = obj[ "so" ],
+                // 可滑动slide的 最大最小距离
+                min_s = obj[ "min_s"], max_s = obj[ "max_s"],
+                // 可显示display的 最大最小距离
+                min_d = obj[ "min_d"], max_d = obj[ "max_d" ];
+        var currentx = 0,
+                startx = 0,
+                movex = 0,
+                isMove = false;
+        // 开始touch
         o.on("touchstart",function(e){
-
+                startx = e.targetTouches[0].clientX;
         });
+        // 开始滑动
+        o.on("touchmove",function(e){
+                /*???开始滑动 触发时间 总是延迟几秒*/
+                isMove = true;
+                // 计算滑动距离
+                movex = e.targetTouches[0].clientX - startx;
+                // 滑动
+                if( min_s && max_s){
+                        if(currentx + movex >= min_s && currentx + movex <= max_s){
+                                so.css( "left" , (currentx + movex) + "px" );
+                        };
+                }else {
+                        so.css( "left" , (currentx + movex) + "px" );
+                }
+        });
+        // 停止滑动
+        o.on("touchend",function(e){
+                // 确定最终位置
+                currentx += movex;
+                currentx = currentx > max_d ? max_d : (currentx < min_d ? min_d : currentx);
+                // 移动到最终位置
+                so.css( "left",currentx+"px" );
+                // 初始化变量
+                startx = 0;
+                movex = 0;
+                isMove = false;
+        })
+};
+// 封装 滑动到一定距离 top按钮显示，一定距离内 透明度变化
+function scrollpage( obj ){
+        // top按钮
+        var $top = obj[ "obj" ],
+                // 开始 显示的距离
+                dis_show = obj[ "dis_show" ],
+                // 透明度变化 的 范围
+                dis_opa = obj[ "dis_opa" ];
+        $(window).on("scroll",function(e){
+                var scroll_top = $(this).scrollTop();
+                if( scroll_top >= dis_show && scroll_top <= ( dis_show + dis_opa ) ){
+                        // 透明度变化的范围
+                        // top按钮显示，设置透明度
+                        $top.css({
+                                "display" : "block",
+                                "opacity" : Math.floor(8 / dis_opa * ( scroll_top - dis_show )) * 0.1
+                        });
+                }else if ( scroll_top < dis_show ){
+                        // 小于 显示距离
+                        $top.css({
+                                "display" : "none",
+                                "opacity" : 0
+                        });
+                }else {
+                        // 大于 透明度变化范围
+                        $top.css({
+                                "display" : "block",
+                                "opacity" : 0.8
+                        })
+                }
+        })
 }
