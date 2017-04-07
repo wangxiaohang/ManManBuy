@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head lang="zh-CN"><!--中文简体-->
+        <meta charset="utf-8">
+        <!--使用 最新的 渲染引擎 渲染页面-->
+        <meta http-equiv="X-UA-Compatible" content="IE=eage">
+        <!--标准的视口设置-->
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+        <title>移动端 慢慢买</title>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+        <!--引入第三方css库-->
+        <!--引入less-->
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <div class="container" id="top">
+            <!--header start-->
+            <header>
+                <a href="#"><img src="images/header_logo.png" alt="logo图标"></a>
+                <a href="#"><img src="images/header_app.png" alt="APP下载"></a>
+            </header>
+            <!--header end-->
+            <!--search start-->
+            <div class="search">
+                <button>搜索</button> 
+                <div>
+                    <input type="text" name="search" placeholder="请输入你想比价的商品">
+                </div>
+            </div>
+            <!--search end-->
+            <!--navs start-->
+            <nav>
+                <ul class="clearfix navs"></ul>
+            </nav>
+            <!--navs end-->
+            <!--商品展示 start-->
+            <section>
+                <h3>
+                    超值折扣推荐
+                    <a href="#">
+                        <img src="http://www.zuyushop.com/wap/images/more.png"/>
+                    </a>
+                </h3>
+                <ul class="products"></ul>
+                <div class="more">
+                    <a href="moneyctrl.html">更多优惠信息 &gt;&gt;</a>
+                </div>
+            </section>
+            <section>
+                <h3>
+                    品牌排行
+                    <a href="#">
+                        <img src="http://www.zuyushop.com/wap/images/more.png"/>
+                    </a>
+                </h3>
+            </section>
+            <!--商品展示 end-->
+            <!--footer start-->
+            <div class="footer">
+                <div class="btns clearfix">
+                    <a href="#">登陆</a>
+                    <a href="#">注册</a>
+                    <a href="#top">
+                        <img src="http://www.zuyushop.com/wap/images/top.jpg"/>返回顶部
+                    </a>
+                </div>
+                <div class="bottom">
+                    <p>
+                        <a href="#">手机APP下载</a>
+                        <a href="#">慢慢买手机版</a>
+                        <a href="#"> -- 掌上手机平台</a>
+                    </p>
+                    <p><a href="m.manmanbuy.com">m.manmanbuy.com</a></p>
+                </div>
+            </div>
+            <!--footer end-->
+        </div>
+        
+        <!--引入第三方js库-->
+        <script src="lib/js/zepto.js"></script>
+        <script src="lib/js/ajax.js"></script>
+        <script src="lib/js/event.js"></script>
+        <script src="lib/js/selector.js"></script>
+        <script src="lib/js/template.js"></script>
+        <!--引入自己的js文件-->
+        <script src="js/base.js"></script>
+        <script src="js/index.js"></script>
+        <!--模版-->
+        <!--1.导航菜单-->
+        <script type="text/html" id="navs">
+            {{each result as value index}}
+            <li class="{{if index > result.length-5}}hide{{/if}}">
+                <a href="{{value.titlehref}}">
+                    <div>
+                        {{#value.img}}
+                    </div>
+                    <p>{{value.name}}</p>
+                </a>
+            </li>
+            {{/each}}
+        </script>
+    </body>
+</html>

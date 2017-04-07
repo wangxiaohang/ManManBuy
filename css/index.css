@@ -1,0 +1,39 @@
+@import url(common.css);
+@import url(base.css);
+@charset "utf-8";
+/*nav start*/
+nav {
+  background: #ffffff;
+  margin-top: 10px;
+  padding: 24px 0 8px 0;
+  font-size: 12px;
+}
+nav > ul > li {
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+nav > ul > li div > img {
+  width: 50px;
+}
+nav > ul > li p {
+  line-height: 28px;
+}
+nav > ul > li.hide {
+  display: none;
+}
+/*nav end*/
+/*商品展示 start*/
+section > .more {
+  padding: 10px;
+}
+section > .more > a {
+  display: block;
+  font: normal 12px/30px "microsoft yahei";
+  border: 1px solid #DDDDDD;
+  border-radius: 5px;
+  background: #FBFBFB;
+  text-align: center;
+  color: black;
+}
+/*商品展示 end*/

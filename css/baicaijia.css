@@ -1,0 +1,453 @@
+@import url(common.css);
+@charset "utf-8";
+/*版心*/
+body > .container {
+  min-width: 320px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+/*header 复杂版 start*/
+header {
+  height: 50px;
+  background: #ff841d;
+}
+header > a {
+  height: 100%;
+}
+header > a:first-child {
+  padding: 12px;
+  float: left;
+}
+header > a:first-child img {
+  max-height: 25px;
+}
+header > a:nth-of-type(2) {
+  float: right;
+  padding: 7px 12px;
+}
+header > a:nth-of-type(2) img {
+  max-height: 36px;
+}
+/*header 复杂版 end*/
+/*search start*/
+.search {
+  padding: 10px 12px;
+  background: #ffffff;
+}
+.search > button {
+  width: 64px;
+  height: 30px;
+  border-radius: 15px;
+  background: #ff841d;
+  color: #ffffff;
+  float: right;
+  margin-left: 8px;
+}
+.search > div {
+  margin-right: 72px;
+}
+.search > div > input {
+  width: 100%;
+  height: 30px;
+  background: #f1f1f1;
+  border-radius: 15px;
+  padding: 10px 22px;
+}
+/*search end*/
+/*header 精简版 start*/
+header.simple {
+  position: relative;
+}
+header.simple a {
+  position: absolute;
+}
+header.simple a:nth-of-type(1) {
+  left: 0;
+  font: normal 24px/50px "黑体";
+  color: #ffffff;
+  padding: 0 15px;
+}
+header.simple a:nth-of-type(2) {
+  right: 0;
+}
+header.simple > h3 {
+  text-align: center;
+  color: #ffffff;
+  font: normal 18px/50px "microsoft yahei";
+}
+/*header 精简版 end*/
+/*footer start*/
+.footer {
+  margin-top: 10px;
+}
+.footer > .btns {
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: #C4C4C4;
+}
+.footer > .btns > a {
+  display: block;
+  float: left;
+  font: normal 14px/32px "aria";
+  text-align: center;
+  box-sizing: border-box;
+}
+.footer > .btns > a:first-child {
+  width: 30%;
+}
+.footer > .btns > a:nth-child(2) {
+  width: 30%;
+  border-width: 0 1px;
+  border-style: solid;
+  border-color: #c4c4c4;
+}
+.footer > .btns > a:last-child {
+  width: 40%;
+}
+.footer > .btns > a:last-child > img {
+  width: 16px;
+  margin-right: 5px;
+}
+.footer > .bottom {
+  padding: 10px 0;
+  text-align: center;
+}
+.footer > .bottom > p {
+  font: normal 12px/16px "microsoft yahei,aria";
+}
+.footer > .bottom > p:first-child > a:first-child {
+  color: red;
+}
+.footer > .bottom > p:first-child > a:nth-child(2) {
+  color: #666;
+}
+.footer > .bottom > p:first-child > a:last-child {
+  color: #aaa;
+}
+.footer > .bottom > p:last-child {
+  color: #666;
+}
+/*footer end*/
+/*商品列表 start*/
+section > h3 {
+  width: 100%;
+  padding-left: 10px;
+  background: -webkit-linear-gradient(top, #ffaf46, #ff9001);
+  background: linear-gradient(to bottom, #ffaf46, #ff9001);
+  color: white;
+  border-bottom: 1px solid #FFC881;
+  font: bold 16px/34px "aria,microsoft yahei";
+}
+section > h3 > a {
+  float: right;
+  display: block;
+  height: 100%;
+  padding: 0 10px;
+}
+section > h3 > a > img {
+  width: 22px;
+}
+section > ul {
+  background: #ffffff;
+}
+section > ul > li {
+  border-bottom: 1px solid #E7E7E7;
+}
+section > ul > li > a {
+  display: block;
+  width: 100%;
+  height: 130px;
+  overflow: hidden;
+  padding: 10px 5px;
+}
+section > ul > li > a > img {
+  float: left;
+  width: 110px;
+  margin-right: 10px;
+}
+section > ul > li > a > p:nth-of-type(1) {
+  font: normal 14px/20px "microsoft yahei";
+  color: #333;
+}
+section > ul > li > a > p:nth-of-type(1) > span {
+  color: #FF6C00;
+}
+section > ul > li > a > p:nth-of-type(2) {
+  color: #EE0000;
+  font: normal 18px/30px "microsoft yahei,Helvetica Neue, Helvetica, STHeiTi, sans-serif";
+  font-family: "microsoft yahei";
+}
+section > ul > li > a > p:nth-of-type(2) > em {
+  font-style: normal;
+  font-size: 12px;
+}
+section > ul > li > a > div {
+  margin-top: 50px;
+  font: normal 12px/16px "microsoft yahei";
+  color: #a1a1a1;
+}
+section > ul > li > a > div > div {
+  width: 35px;
+  float: right;
+}
+section > ul > li > a > div > div > img {
+  width: 14px;
+  margin-right: 5px;
+}
+section > ul > li > a > p:nth-of-type(3) {
+  color: #a1a1a1;
+  font: normal 12px/16px "microsoft yahei";
+}
+section > ul > li > a > p:nth-of-type(3) > span:first-child {
+  float: left;
+}
+section > ul > li > a > p:nth-of-type(3) > span:last-child {
+  float: right;
+}
+section.compare > ul > li {
+  border-bottom: none;
+}
+section.compare > ul > li > a > p:nth-of-type(1) {
+  line-height: 30px;
+  color: black;
+}
+/*商品列表 end*/
+/*导航条 start*/
+.nav {
+  border-top: 1px solid #EBEBEB;
+  border-bottom: 1px solid #CCCCCC;
+  background: -webkit-linear-gradient(top, #ffffff, #ececec);
+  background: linear-gradient(to bottom, #ffffff, #ececec);
+  font: normal 14px/32px "microsoft yahei";
+  padding: 0 5px;
+}
+.nav > a {
+  padding: 0 5px;
+}
+/*导航条 end*/
+/*翻页按钮 start*/
+.pagebtns {
+  padding: 10px 0;
+}
+.pagebtns > div {
+  text-align: center;
+  float: left;
+}
+.pagebtns > div > button {
+  width: 82px;
+  height: 32px;
+  border: 1px solid #dcdcdc;
+  background: -webkit-linear-gradient(top, #f0f0f0, #d5d5d5);
+  background: linear-gradient(to bottom, #f0f0f0, #d5d5d5);
+  font-size: 14px;
+}
+.pagebtns > div.pre {
+  width: 30%;
+}
+.pagebtns > div.select {
+  width: 40%;
+}
+.pagebtns > div.select > select {
+  width: 128px;
+  height: 32px;
+  border: 1px solid #BABABA;
+  line-height: 18px;
+  padding: 0 10px;
+}
+.pagebtns > div.next {
+  width: 30%;
+}
+/*翻页按钮 end*/
+/*公共类*/
+@-webkit-keyframes slidedown {
+  from {
+    height: 0 ;
+  }
+  to {
+    height: 100%;
+  }
+}
+@keyframes slidedown {
+  from {
+    height: 0 ;
+  }
+  to {
+    height: 100%;
+  }
+}
+@-webkit-keyframes slideup {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0;
+  }
+}
+@keyframes slideup {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0;
+  }
+}
+/*商品详情*/
+.pmain {
+  background: #ffffff;
+  padding: 10px;
+}
+.pmain > h4 {
+  color: #5A5A5A;
+  font: bold 16px/32px "黑体";
+}
+.pmain > p {
+  font: normal 12px/32px "microsoft yahei";
+  color: #999;
+}
+.pmain > .desc {
+  overflow: hidden;
+}
+.pmain > .desc > img {
+  float: right;
+  width: 116px;
+  margin: 12px;
+}
+.pmain > .desc > p {
+  font: normal 16px/24px "microsoft yahei";
+  color: #606060;
+  text-indent: 2em;
+  margin: 10px 0;
+}
+.pmain .proImg {
+  text-align: center;
+  padding: 10px 0;
+}
+.pmain .proImg > img {
+  height: 330px;
+}
+.pmain .citys > ul {
+  width: 136px;
+  margin: 0 auto;
+  border-left: 1px solid #F1F1F1;
+  padding: 10px;
+  box-shadow: 1px 3px 3px #ccc;
+}
+.pmain .citys > ul > li {
+  border-bottom: 1px dotted #C0C0C0;
+}
+.pmain .citys > ul > li > a {
+  display: block;
+  font: normal 12px/20px "microsoft yahei";
+  padding: 0 10px;
+}
+.pmain .citys > ul > li > a > span {
+  color: black;
+}
+.pmain .citys > ul > li > a > span > strong {
+  color: #ff841d;
+  float: right;
+  font-weight: normal;
+}
+.pmain > a.buy {
+  display: block;
+  margin: 20px 10px;
+  background: #FF9000;
+  font: normal 14px/30px "microsoft yahei";
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+}
+.pmain > img[alt="广告"] {
+  width: 100%;
+  margin: 10px 0;
+}
+.pmain div.tit {
+  font: normal 16px/44px "microsoft yahei";
+  color: black;
+}
+.pmain div.reply {
+  padding: 0 5px;
+}
+.pmain div.reply > .form {
+  position: relative;
+  border: 2px solid #ECEAE8;
+}
+.pmain div.reply > .form > textarea {
+  width: 100%;
+  height: 72px;
+  box-sizing: border-box;
+  padding: 8px 4px
+  /*设置overflow:hidden后，输入时出现奇怪图标*/
+}
+.pmain div.reply > .form > .ctrl {
+  background: #eee;
+  height: 40px;
+  border-top: 1px solid #F2F2F2;
+}
+.pmain div.reply > .form > .ctrl > input {
+  width: 100px;
+  height: 40px;
+  background: #ff841d;
+  font: normal 16px/40px "microsoft yahei";
+  color: #ffffff;
+  border: 1px solid #DCDCDC;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.pmain div.list > ul > li.ui-border-b {
+  padding: 10px 0;
+  position: relative;
+}
+.pmain div.list > ul > li.ui-border-b > .userimg {
+  position: absolute;
+  left: 0;
+  top: 12px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.pmain div.list > ul > li.ui-border-b > .userimg img {
+  width: 40px;
+}
+.pmain div.list > ul > li.ui-border-b > .con {
+  padding-left: 50px;
+}
+.pmain div.list > ul > li.ui-border-b > .con > .name > div {
+  font: normal 12px/24px "microsoft yahei";
+}
+.pmain div.list > ul > li.ui-border-b > .con > .name > div:first-child {
+  float: left;
+  color: #5997C0;
+}
+.pmain div.list > ul > li.ui-border-b > .con > .name > div:last-child {
+  float: right;
+  color: #9999B2;
+}
+.pmain div.list > ul > li.ui-border-b > .con .content {
+  font: normal 14px/20px "microsoft yahei";
+  color: #606060;
+}
+header {
+  background: #F4483E;
+}
+.nav {
+  background: #fff;
+  width: 100%;
+  height: 37px;
+  overflow: hidden;
+}
+.nav > ul > li {
+  float: left;
+  height: 35px;
+}
+.nav > ul > li > a {
+  display: block;
+  font: normal 14px/36px "microsoft yahei";
+  padding: 0 10px;
+}
+.nav > ul > li.active {
+  border-bottom: 1px solid red;
+}
+.nav > ul > li.active > a {
+  color: red;
+}

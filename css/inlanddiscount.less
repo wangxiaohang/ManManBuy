@@ -1,0 +1,51 @@
+@charset "utf-8";
+@import url(common.css);
+@import url(base.less);
+.pmain {
+  > ul {
+    > li {
+      float:left;
+      width:50%;
+      border-bottom:1px solid #EEEEEE;
+      padding:10px;
+      background:@white;
+      &:nth-of-type(2n){
+        border-left:1px solid #eee;
+      }
+      > a {
+        width:100%;
+        height:100%;
+        // 商品图片
+        > .image {
+          text-align:center;
+          padding:10px 0;
+          > img {
+            height:120px;
+          }
+        }
+        > p {
+          padding-left:10px;
+        }
+        // 标题
+        > div:nth-of-type(2){
+          height:60px;
+          overflow:hidden;
+          > p{
+            font:bold 14px/20px "aria";
+            margin:10px 0;
+          }
+        }
+        // 价格
+        > p:nth-of-type(1){
+          font:normal 14px/20px "microsoft yahei";
+          color:@orange;
+        }
+        // 商城 时间
+        > p:nth-of-type(2){
+          font:normal 12px/20px "microsoft yahei";
+          color:#A1A1A1;
+        }
+      }
+    }
+  }
+}

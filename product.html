@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+      <meta charset="UTF-8">
+      <!--使用最新的渲染引擎-->
+      <meta http-equiv="X-UA-compatible" content="IE-edge" />
+      <!--标准的视口设置-->
+      <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0" />
+      <title>商品详情</title>
+      <!--设置小图标-->
+      <link rel="shortcut icon" type="x-image/icon" href="favicon.ico" />
+      <!--引入css-->
+      <link rel="stylesheet" href="css/product.css" />
+</head>
+<body>
+<div class="container" id="top">
+      <!--header start-->
+      <header>
+            <a href="#"><img src="images/header_logo.png" alt="logo图标"></a>
+            <a href="#"><img src="images/header_app.png" alt="APP下载"></a>
+      </header>
+      <!--header end-->
+      <!--search start-->
+      <div class="search">
+            <button>搜索</button>
+            <div>
+                  <input type="text" name="search" placeholder="请输入你想比价的商品">
+            </div>
+      </div>
+      <!--search end-->
+      <!--main start-->
+      <!--导航条-->
+      <div class="nav">
+            <a href="index.html">首页</a>
+            &gt;
+            <a href="category.html">全部分类</a>
+            &gt;
+            <a id="twice"></a>
+            &gt;
+            <a href="javascript:;" id="current"></a>
+      </div>
+      <!--商品详细信息-->
+      <div class="content">
+      </div>
+      <!--main end-->
+      <!--footer start-->
+      <div class="footer">
+            <div class="btns clearfix">
+                  <a href="#">登陆</a>
+                  <a href="#">注册</a>
+                  <a href="#top">
+                        <img src="http://www.zuyushop.com/wap/images/top.jpg"/>返回顶部
+                  </a>
+            </div>
+            <div class="bottom">
+                  <p>
+                        <a href="#">手机APP下载</a>
+                        <a href="#">慢慢买手机版</a>
+                        <a href="#"> -- 掌上手机平台</a>
+                  </p>
+                  <p><a href="m.manmanbuy.com">m.manmanbuy.com</a></p>
+            </div>
+      </div>
+      <!--footer end-->
+</div>
+
+
+<!--引入第三方js库-->
+<script src="lib/js/zepto.js"></script>
+<script src="lib/js/ajax.js"></script>
+<script src="lib/js/event.js"></script>
+<script src="lib/js/selector.js"></script>
+<script src="lib/js/template.js"></script>
+<!--引入自己的js文件-->
+<script src="js/base.js"></script>
+<script src="js/product.js"></script>
+<!--模版-->
+<!--1.主要信息-->
+<script type="text/html" id="t_content">
+      <!--收藏-->
+      <img class="collect" src="http://www.zuyushop.com/wap/images/sc.jpg" alt="收藏"/>
+      <!--商品图片-->
+      {{#productImg}}
+      <!--标题-->
+      <h3>{{productName}}</h3>
+      <!--面板-->
+      <div class="info">
+            <div class="titles clearfix">
+                  <div data-val="0" class="active">比价购买</div>
+                  <div data-val="1">产品参数</div>
+                  <div data-val="2" id="com">评价</div>
+            </div>
+            <div class="panels clearfix">
+                  <div class="compare">
+                        {{#bjShop}}
+                  </div>
+                  <div class="param hide">
+                        <div class="param_con">
+                              <dl>
+                                    <dt>基本参数</dt>
+                                    <dd class="clearfix">
+                                          <p>曝光日期</p>
+                                          <p>2016年01月</p>
+                                    </dd>
+                                    <dd class="clearfix">
+                                          <p>手机类型</p>
+                                          <p>4G手机，3G手机，只能手机，拍照手机</p>
+                                    </dd>
+                              </dl>
+                              <dl>
+                                    <dt>其他参数</dt>
+                                    <dd class="clearfix">
+                                          <p>操作系统</p>
+                                          <p>Android OS 5.1</p>
+                                    </dd>
+                              </dl>
+                              <dl>
+                                    <dt>电视附件</dt>
+                                    <dd class="clearfix">
+                                          <p>包装清单</p>
+                                          <p>主机 X1；充电器 X1；USB线 X1；保修卡 X1</p>
+                                    </dd>
+                              </dl>
+                              <dl>
+                                    <dt>保修信息</dt>
+                                    <dd class="clearfix">
+                                          <p>保修政策</p>
+                                          <p>全国联保，享受三包服务</p>
+                                    </dd>
+                                    <dd class="clearfix">
+                                          <p>质保时间</p>
+                                          <p>1年</p>
+                                    </dd>
+                                    <dd class="clearfix">
+                                          <p>质保备注</p>
+                                          <p>主机1年，电池6个月，充电器1年</p>
+                                    </dd>
+                                    <dd class="clearfix">
+                                          <p>客服电话</p>
+                                          <P>400-818-8818</P>
+                                    </dd>
+                                    <dd class="clearfix">
+                                          <p>详细内容</p>
+                                          <p>自购机日起（以购机发票为准），如因质量问题或故障，凭厂商维修中心或特约维修点的质量检测证明，享受7日内退货，15日内换货，15日以上在质保期内享受免费保修等三包服务！注单独购买手机配件产品的用户，请完好保存配件外包装以及发票原件，如无法提供上述凭证的，将无法进行正常的配件保修或更换。进入官网>></p>
+                                    </dd>
+                              </dl>
+                              <dl>
+                                    <dt>CPU性能</dt>
+                                    <dd class="clearfix">
+                                          <p>ROM容量</p>
+                                          <p>16GB</p>
+                                    </dd>
+                              </dl>
+                              <dl>
+                                    <dt>外观设计</dt>
+                                    <dd class="clearfix">
+                                          <p>机身颜色</p>
+                                          <p>金色，银色</p>
+                                    </dd>
+                              </dl>
+                        </div>
+                  </div>
+                  <div class="comment hide">
+                        <ul class="comment_con"></ul>
+                        <div class="more">
+                              <a href="#">查看更多评价</a>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</script>
+<!--2.评论-->
+<script type="text/html" id="t_commend">
+      {{each result as value index}}
+      <li>
+            <p class="clearfix">
+                  <span>{{value.comName}}</span>
+                  <span>{{value.comTime}}</span>
+            </p>
+            <p>{{value.comFrom}}</p>
+            <p>{{value.comContent}}</p>
+      </li>
+      {{/each}}
+</script>
+</body>
+</html>

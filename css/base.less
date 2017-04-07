@@ -1,0 +1,453 @@
+@charset "utf-8";
+@orange:#FF841D;
+@white:#fff;
+@gray:#f1f1f1;
+/*版心*/
+body > .container {
+    min-width:320px;
+    max-width:640px;
+    margin:0 auto;
+}
+/*header 复杂版 start*/
+header {
+    height:50px;
+    background:@orange;
+    > a {
+        height:100%;
+        &:first-child {
+            padding:12px;
+            float:left;
+            img {
+                max-height:25px;
+            }
+        }
+        &:nth-of-type(2) {
+            float:right;
+            padding:7px 12px;
+            img {
+                max-height:36px;
+            }
+        }
+    }
+}
+/*header 复杂版 end*/
+/*search start*/
+.search {
+    padding: 10px 12px;
+    background:@white;
+    > button {
+        width: 64px;
+        height: 30px;
+        border-radius:15px;
+        background:@orange;
+        color:@white;
+        float:right;
+        margin-left:8px;
+    }
+    > div {
+        margin-right:72px;
+        > input {
+            width:100%;
+            height:30px;
+            background:@gray;
+            border-radius:15px;
+            padding:10px 22px;
+        }
+    }
+}
+/*search end*/
+/*header 精简版 start*/
+header.simple {
+  position:relative;
+  a {
+    position:absolute;
+    &:nth-of-type(1) {
+      left:0;
+      font:normal 24px/50px "黑体";
+      color:@white;
+      padding:0 15px;
+    }
+    &:nth-of-type(2) {
+      right:0;
+    }
+  }
+  > h3 {
+    text-align:center;
+    color:@white;
+    font:normal 18px/50px "microsoft yahei";
+  }
+}
+/*header 精简版 end*/
+/*footer start*/
+.footer {
+  margin-top:10px;
+  > .btns {
+    border-width:1px 0;
+    border-style:solid;
+    border-color:#C4C4C4;
+    > a {
+      display:block;
+      float:left;
+      font:normal 14px/32px "aria";
+      text-align:center;
+      box-sizing:border-box;
+      &:first-child {
+        width:30%;
+      }
+      &:nth-child(2){
+        width:30%;
+        border-width:0 1px;
+        border-style:solid;
+        border-color:#c4c4c4;
+      }
+      &:last-child{
+        width:40%;
+        > img {
+          width:16px;
+          margin-right:5px;
+        }
+      }
+    }
+  }
+  > .bottom {
+    padding:10px 0;
+    text-align:center;
+    > p {
+      font:normal 12px/16px "microsoft yahei,aria";
+      &:first-child {
+        > a:first-child {
+          color:red;
+        }
+        > a:nth-child(2){
+          color:#666;
+        }
+        > a:last-child {
+          color:#aaa;
+        }
+      }
+      &:last-child {
+        color:#666;
+      }
+    }
+  }
+}
+/*footer end*/
+/*商品列表 start*/
+section {
+  // 标题栏
+  > h3 {
+    width:100%;
+    padding-left:10px;
+    background:linear-gradient(to bottom,#FFAF46,#FF9001);
+    color:white;
+    border-bottom:1px solid #FFC881;
+    font:bold 16px/34px "aria,microsoft yahei";
+    > a {
+      float:right;
+      display:block;
+      height:100%;
+      padding:0 10px;
+      > img {
+        width:22px;
+      }
+    }
+  }
+  // 商品列表
+  > ul {
+    background:@white;
+    > li {
+      border-bottom:1px solid #E7E7E7;
+      > a {
+        display:block;
+        width:100%;
+        height:130px;
+        overflow:hidden;
+        padding:10px 5px;
+        > img {
+          float:left;
+          width:110px;
+          margin-right:10px;
+        }
+        // 商品标题
+        > p:nth-of-type(1) {
+          font:normal 14px/20px "microsoft yahei";
+          color:#333;
+          > span {
+            color:#FF6C00;
+          }
+        }
+        // 价格
+        > p:nth-of-type(2) {
+          color:#EE0000;
+          font:normal 18px/30px "microsoft yahei,Helvetica Neue, Helvetica, STHeiTi, sans-serif";
+          font-family:"microsoft yahei";
+          > em {
+            font-style:normal;
+            font-size:12px;
+          }
+        }
+        // 商品展示列表 小灰色字
+        > div {
+          margin-top:50px;
+          font:normal 12px/16px "microsoft yahei";
+          color:#a1a1a1;
+          // 评论
+          > div {
+            width:35px;
+            float:right;
+            > img {
+              width:14px;
+              margin-right:5px;
+            }
+          }
+        }
+        // 商品比较列表 小灰色字
+        > p:nth-of-type(3){
+          color:#a1a1a1;
+          font:normal 12px/16px "microsoft yahei";
+          > span:first-child {
+            float:left;
+          }
+          > span:last-child {
+            float:right;
+          }
+        }
+      }
+    }
+  }
+  // 比价类商品列表
+  &.compare > ul {
+    > li {
+      border-bottom:none;
+      > a {
+        > p:nth-of-type(1){
+          line-height:30px;
+          color:black;
+        }
+      }
+    }
+  }
+}
+/*商品列表 end*/
+/*导航条 start*/
+.nav {
+  border-top:1px solid #EBEBEB;
+  border-bottom:1px solid #CCCCCC;
+  background:linear-gradient(to bottom,#fff,#ECECEC);
+  font:normal 14px/32px "microsoft yahei";
+  padding:0 5px;
+  > a {
+    padding: 0 5px;
+  }
+}
+/*导航条 end*/
+/*翻页按钮 start*/
+.pagebtns {
+  padding:10px 0;
+  > div {
+    text-align:center;
+    float:left;
+    > button {
+      width: 82px;
+      height: 32px;
+      border: 1px solid #dcdcdc;
+      background: linear-gradient(to bottom, #f0f0f0, #d5d5d5);
+      font-size: 14px;
+    }
+  }
+  > div.pre {
+    width:30%;
+  }
+  > div.select {
+    width:40%;
+    > select {
+      width: 128px;
+      height: 32px;
+      border:1px solid #BABABA;
+      line-height:18px;
+      padding:0 10px;
+    }
+  }
+  > div.next {
+    width:30%;
+  }
+}
+/*翻页按钮 end*/
+/*公共类*/
+@keyframes slidedown {
+  from { height:0 ;}
+  to {
+    height:100%;
+  }
+}
+@keyframes slideup {
+  from { height:100%; }
+  to { height:0; }
+}
+.hide(@time:.5s) {
+  animate:slideup @time;
+}
+.show(@time:.5s) {
+  animate:slidedown @time;
+}
+/*商品详情*/
+.pmain {
+  background:@white;
+  padding:10px;
+  // 标题
+  > h4 {
+    color:#5A5A5A;
+    font:bold 16px/32px "黑体";
+  }
+  // 作者
+  > p {
+    font:normal 12px/32px "microsoft yahei";
+    color:#999;
+  }
+  // 商品描述
+  > .desc {
+    overflow:hidden;
+    > img {
+      float:right;
+      width:116px;
+      margin:12px;
+    }
+    > p {
+      font:normal 16px/24px "microsoft yahei";
+      color:#606060;
+      text-indent:2em;
+      margin:10px 0;
+    }
+  }
+  // 大图显示
+  .proImg {
+    text-align:center;
+    padding:10px 0;
+    > img {
+      height:330px;
+    }
+  }
+  // 有货的地区
+  .citys {
+    > ul {
+      width:136px;
+      margin:0 auto;
+      border-left:1px solid #F1F1F1;
+      padding:10px;
+      box-shadow:1px 3px 3px #ccc;
+      > li {
+        border-bottom:1px dotted #C0C0C0;
+        > a {
+          display:block;
+          font:normal 12px/20px "microsoft yahei";
+          padding:0 10px;
+          > span {
+            color:black;
+            > strong {
+              color:@orange;
+              float:right;
+              font-weight:normal;
+            }
+          }
+        }
+      }
+    }
+  }
+  // 按钮：前往购买
+  > a.buy {
+    display:block;
+    margin:20px 10px;
+    background:#FF9000;
+    font:normal 14px/30px "microsoft yahei";
+    color:white;
+    text-align:center;
+    border-radius:5px;
+  }
+  // 广告
+  > img[alt="广告"] {
+    width:100%;
+    margin:10px 0;
+  }
+  // 评论
+    // 标题
+   div.tit {
+    font: normal 16px/44px "microsoft yahei";
+    color: black;
+  }
+   div.reply {
+     padding: 0 5px;
+     // 编辑区
+     > .form {
+       position: relative;
+       border: 2px solid #ECEAE8;
+       > textarea {
+         width: 100%;
+         height: 72px;
+         box-sizing: border-box;
+         padding: 8px 4px;
+         /*设置overflow:hidden后，输入时出现奇怪图标*/
+       }
+       // 发送按钮区
+       > .ctrl {
+         background: #eee;
+         height: 40px;
+         border-top: 1px solid #F2F2F2;
+         > input {
+           width: 100px;
+           height: 40px;
+           background: @orange;
+           font: normal 16px/40px "microsoft yahei";
+           color: @white;
+           border: 1px solid #DCDCDC;
+           position: absolute;
+           right: 0;
+           bottom: 0;
+         }
+       }
+     }
+   }
+  // 评论列表区
+   div.list {
+    > ul {
+      > li.ui-border-b {
+        padding:10px 0;
+        position:relative;
+        // 用户头像
+        > .userimg {
+          position:absolute;
+          left:0;
+          top:12px;
+          border-radius:50%;
+          overflow:hidden;
+          img {
+            width:40px;
+          }
+        }
+        // 用户信息
+        > .con {
+          padding-left:50px;
+          // 名称 时间
+          > .name {
+            > div {
+              font:normal 12px/24px "microsoft yahei";
+              &:first-child {
+                float:left;
+                color:#5997C0;
+              }
+              &:last-child {
+                float:right;
+                color:#9999B2;
+              }
+            }
+          }
+          // 评论内容
+          .content {
+            font:normal 14px/20px "microsoft yahei";
+            color:#606060;
+          }
+        }
+      }
+    }
+  }
+}
+

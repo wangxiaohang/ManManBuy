@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="ZH-CN"><!--中文简体-->
+      <meta charset="UTF-8">
+      <!--使用最新的渲染引擎-->
+      <meta http-equiv="X-UA-compatible" content="IE-edge" />
+      <!--标准的视口设置-->
+      <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0" />
+      <!--设置标题图标-->
+      <link rel="shortcut icon" type="x-image/icon" href="favicon.ico" />
+      <!--引入css-->
+      <link rel="stylesheet" href="css/inlanddiscount.css" />
+      <title></title>
+</head>
+<body>
+<div class="container" id="top">
+      <!--header start-->
+      <header class="simple">
+            <a href="index.html">&lt;</a>
+            <a href="#"><img src="images/header_app.png" alt="APP下载"></a>
+            <h3>国内折扣</h3>
+      </header>
+      <!--header end-->
+      <div class="pmain">
+            <ul class="clearfix"></ul>
+      </div>
+      <!--footer start-->
+      <div class="footer">
+            <div class="btns clearfix">
+                  <a href="#">登陆</a>
+                  <a href="#">注册</a>
+                  <a href="#top">
+                        <img src="http://www.zuyushop.com/wap/images/top.jpg"/>返回顶部
+                  </a>
+            </div>
+            <div class="bottom">
+                  <p>
+                        <a href="#">手机APP下载</a>
+                        <a href="#">慢慢买手机版</a>
+                        <a href="#"> -- 掌上手机平台</a>
+                  </p>
+                  <p><a href="m.manmanbuy.com">m.manmanbuy.com</a></p>
+            </div>
+      </div>
+      <!--footer end-->
+</div>
+
+<!--引入js文件-->
+<script src="lib/js/zepto.js"></script>
+<script src="lib/js/ajax.js"></script>
+<script src="lib/js/event.js"></script>
+<script src="lib/js/selector.js"></script>
+<script src="lib/js/template.js"></script>
+<!--引入自己的js文件-->
+<script src="js/base.js"></script>
+<script src="js/inlanddiscount.js"></script>
+<!--模版-->
+<script type="text/html" id="product">
+      {{each result as value index}}
+      <li>
+            <a href="productInfo.html?type=discount&productid={{value.productId}}">
+                  <div class="image">
+                        {{#value.productImg}}
+                  </div>
+                  <div>
+                        <p class="txt-cut">{{value.productName}}</p>
+
+                  </div>
+                  <p class="one-txt-cut">{{value.productPrice}}</p>
+                  <p><span>{{value.productFrom}}</span>&nbsp;|&nbsp;<span>{{value.productTime}}</span></p>
+            </a>
+      </li>
+      {{/each}}
+</script>
+</body>
+</html>
